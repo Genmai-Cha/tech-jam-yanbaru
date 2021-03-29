@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	{% block script %}{% endblock %}
+</head>
+
+<body>
+	<header>{% block header %}{% endblock %}</header>
+
+	<div class="title">{% block title %}{% endblock %}</div>
+
+	{% block content %}{% endblock %}
+
+	<footer>共通フッタ</footer>
+
+</body>
+
+</html>
