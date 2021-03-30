@@ -1,22 +1,26 @@
-{% extends "layout.html" %}
-{% extends 'a_editing.html' %}
-{% extends 'a_post.html' %}
-{% extends 'detail.html' %}
-{% extends 'editing.html' %}
-{% extends 'q_post.html' %}
-
-{% block script %}
-  // スクリプトの実装
-{% endblock %}
-
-{% block header%}<h1>ヘッダー</h1>{% endblock %}
-
-{% block title %}ログイン{% endblock %}
-
-{% block content %}
-  <div>
-    <div class="content">ここ、コンテンツ</div>
-    {% include "parts1.html" %}
-    {% include "parts2.html" %}
+{% extends 'application.html' %} {% block script %} {% endblock %} {% block
+title %}テスト{% endblock %} {% block content %}
+<div>
+  <div class="content">
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>タイトル</th>
+          <th>質問本文</th>
+          <th>作成日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for question in questions %}
+        <tr>
+          <td>{{question.title}}</td>
+          <td>{{question.content}}</td>
+          <td>{{question.created_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
+  {% include "parts1.html" %} {% include "parts2.html" %}
+</div>
 {% endblock %}
