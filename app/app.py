@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,url_for,redirect,jsonify
 from models.models import Questions, Comments
 from models.database import db_session
+from sqlalchemy import desc
 
 #Flaskオブジェクトの生成
 app = Flask(__name__)
@@ -8,9 +9,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def top():
-	name = "who"
-
-	return render_template('layout.html', name=name)
+    question_list = Questions.query.order_by(desc(Questions.created_at)).all()
+    return render_template('index.html', questions=question_list)
 
 @app.route('/questions/<int:question_id>')
 def question_detail(question_id):
