@@ -7,13 +7,14 @@
 		<div class="icon_erea">
 			<img src="/static/images/icon01.png" alt="仮アイコン" class="user_icon">
 			<div class="name_date_box">
-				<p>運営さん</p>
+				<p>質問者さん</p>
 			    <p>2021/03/31</p>
 			</div>
 		</div>
 		<div class="question_contents">
-			<h2>{{question.title}}</h2>
+			<h3>{{question.title}}</h3>
 		<p>{{question.content}}</p> 
 		</div>
 	</div>
+	<a class="waves-effect waves-light btn-large" href="/questions/{{question_id}}/comments/new">回答する</a>
 {% endblock %}

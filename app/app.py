@@ -15,7 +15,7 @@ def top():
 @app.route('/questions/<int:question_id>')
 def question_detail(question_id):
 	question = Questions.query.filter_by(id=question_id).first()
-	return render_template('question_detail.html', question=question)
+	return render_template('question_detail.html', question=question,question_id=question_id)
 
 @app.route('/questions/<int:question_id>/edit')
 def question_edit(question_id):
