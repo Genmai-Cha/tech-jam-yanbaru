@@ -53,16 +53,6 @@ def question_new():
 
     return redirect(url_for('top'))
 
-@app.route('/question/<int:question_id>/edit',methods=['post'])
-def question_edit(question_id):
-    question = Questions.query.filter_by(id=question_id).first()
-    question.title = request.args.get("question_title")
-    question.content = request.args.get("question_content")
-    db_session.add(question)
-    db_session.commit()
-
-    return redirect(url_for('question_detail', question_id=question_id))
-
 @app.route('/questions/<int:question_id>/comments/new')
 def get_questions_comments_new(question_id):
     return render_template('question_comment_new.html', question_id=question_id)
