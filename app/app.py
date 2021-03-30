@@ -17,6 +17,12 @@ def question_detail(question_id):
 	question = Questions.query.filter_by(id=question_id).first()
 	return render_template('question_detail.html', question=question)
 
+@app.route('/questions/<int:question_id>/edit')
+def question_edit(question_id):
+	question = Questions.query.filter_by(id=question_id).first()
+
+	return render_template('question_edit.html', question=question)
+
 @app.route('/questions/<int:question_id>', methods=['patch'])
 def patch_question(question_id):
     question = Questions.query.filter_by(id=question_id).first()
