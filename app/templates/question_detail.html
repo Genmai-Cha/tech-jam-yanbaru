@@ -3,6 +3,12 @@
 	<div>
 		<div class="content">質問詳細ページ</div>
 	</div>
-	質問タイトル：{{question.title}}
-	質問本文：{{question.content}}
+	<div class="question_box">
+		<div class="icon_erea">
+			<img src="/static/images/icon01.png" alt="仮アイコン">
+			<p>名無しさん</p>
+		</div>
+		<h1>{{question.title}}</h1>
+		<p>{{question.content}}</p> 
+	</div>
 {% endblock %}
