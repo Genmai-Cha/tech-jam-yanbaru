@@ -13,10 +13,10 @@ def top():
 	return render_template('layout.html', name=name)
 
 @app.route('/questions/<int:question_id>')
-def question_detail():
-	name = "hoge"
+def question_detail(question_id):
+	question = Questions.query.filter_by(id=question_id).first()
 
-	return render_template('detail.html', name=name)
+	return render_template('question_detail.html', question=question)
 
 @app.route('/question/form')
 def question_form():
@@ -34,11 +34,15 @@ def question_new():
 	
     return redirect(url_for('top'))
 
-@app.route('/questions/<int:question_id>/edit')
-def question_edit():
-	name = "piyo"
+@app.route('/question/<int:question_id>/edit',methods=['post'])
+def question_edit(question_id):
+    question = Questions.query.filter_by(id=question_id).first()
+    question.title = request.args.get("question_title")
+    question.content = request.args.get("question_content")
+    db_session.add(question)
+    db_session.commit()
 
-	return render_template('editing.html', name=name)
+    return redirect(url_for('question_detail', question_id=question_id))
 
 @app.route('/answers/new')
 def answer_post():
