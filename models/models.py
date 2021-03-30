@@ -1,5 +1,5 @@
 # テーブルのカラム情報を定義するためのクラスを格納するためのファイル
-from sqlalchemy import Column, Integer, String, Text, DateTime
+from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, event, engine
 from models.database import Base
 from datetime import datetime
 
