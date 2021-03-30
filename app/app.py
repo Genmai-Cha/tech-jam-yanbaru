@@ -1,5 +1,5 @@
-from flask import Flask,render_template,request,url_for,redirect
-from models.models import Questions
+from flask import Flask,render_template,request,url_for,redirect,jsonify
+from models.models import Questions, Comments
 from models.database import db_session
 
 #Flaskオブジェクトの生成
@@ -31,7 +31,7 @@ def question_new():
     question.content = question_content
     db_session.add(question)
     db_session.commit()
-	
+
     return redirect(url_for('top'))
 
 @app.route('/question/<int:question_id>/edit',methods=['post'])
@@ -44,11 +44,19 @@ def question_edit(question_id):
 
     return redirect(url_for('question_detail', question_id=question_id))
 
-@app.route('/answers/new')
-def answer_post():
-	name = "poyo"
+@app.route('/questions/<int:question_id>/comments/new')
+def get_questions_comments_new(question_id):
+    return render_template('question_comment_new.html', question_id=question_id)
 
-	return render_template('a_post.html', name=name)
+@app.route('/comments', methods=['post'])
+def post_comments():
+    comment = Comments()
+    comment.question_id = request.form['question_id']
+    comment.content = request.form['content']
+    db_session.add(comment)
+    db_session.commit()
+
+    return redirect(url_for('question_detail', question_id=comment.question_id))
 
 @app.route('/answers/<int:question_id>')
 def answer_edit():
