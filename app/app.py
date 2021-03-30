@@ -57,8 +57,3 @@ def post():
     all_onegai = OnegaiContent.query.all()
     return render_template("jinja.html", name=name, all_onegai=all_onegai)
     #変更終わり
-
-
-#app.pyをターミナルから直接呼び出した時だけ、app.run()を実行する
-if __name__ == "__main__":
-    app.run(debug=True)

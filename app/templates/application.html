@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head> 
-	<!-- MaterializeCSS導入部分 -->
+  <head>
+    <!-- MaterializeCSS導入部分 -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -10,20 +10,17 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-	{% block script %}
-    {% endblock %}
-</head>
-<body>
-	<header>{% block header %}{% endblock %}</header>
-	<div class="title">{% block title %}{% endblock %}</div>
-	{% block content %}{% endblock %}
-	Hello {{ name }}
-	<footer>共通フッタ--</footer>
+    {% block script %} {% endblock %}
+  </head>
+  <body>
+    <header>{% block header %}{% endblock %}</header>
+    <div class="title">{% block title %}{% endblock %}</div>
+    {% block content %}{% endblock %} Hello {{ name }}
+    <footer>共通フッタ--</footer>
 
-
-	<!-- jQuery導入部分 -->
+    <!-- jQuery導入部分 -->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="static/js/common.js"></script>
-</body>
+  </body>
 </html>
