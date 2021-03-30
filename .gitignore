@@ -91,3 +91,6 @@ ENV/
 # sqlite db
 models/qa_advance.db
 models/onegai.db
+
+# DS_Store
+.DS_Store
