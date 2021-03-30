@@ -18,12 +18,12 @@ def question_detail():
 
 	return render_template('detail.html', name=name)
 
-@app.route('/question/add_form')
-def add_question_form():
-    return render_template('question_add.html')
+@app.route('/question/form')
+def question_form():
+    return render_template('question_new.html')
 
-@app.route('/question/add',methods=['post'])
-def add_question():
+@app.route('/question/new',methods=['post'])
+def question_new():
     question_title = request.form["question_title"]
     question_content = request.form["question_content"]
     question = Questions()
