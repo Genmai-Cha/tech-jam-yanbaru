@@ -18,6 +18,20 @@ def question_detail(question_id):
 
 	return render_template('question_detail.html', question=question)
 
+@app.route('/questions/<int:question_id>', methods=['patch'])
+def patch_question(question_id):
+    question = Questions.query.filter_by(id=question_id).first()
+    question.title = request.form['question_title']
+    question.content = request.form['question_content']
+    db_session.add(question)
+    db_session.commit()
+
+    return jsonify({
+        'id': question.id,
+        'title': question.title,
+        'content': question.content,
+    })
+
 @app.route('/question/form')
 def question_form():
     return render_template('question_new.html')
