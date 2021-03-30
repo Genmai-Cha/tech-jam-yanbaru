@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 class Questions(Base):
     __tablename__ = 'questions'
     id = Column(Integer, primary_key=True,autoincrement = True)
-    title = Column(String(128), unique=True)
+    title = Column(String(128))
     content = Column(Text)
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime)
