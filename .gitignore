@@ -87,3 +87,7 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# sqlite db
+models/qa_advance.db
+models/onegai.db
