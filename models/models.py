@@ -2,7 +2,7 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, event, engine
 from models.database import Base
 from datetime import datetime
-
+from sqlalchemy.orm import relationship
 
 class Questions(Base):
     __tablename__ = 'questions'
