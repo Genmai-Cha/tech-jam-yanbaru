@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block script %}
+  // スクリプトの実装
+{% endblock %}
+
+{% block header%}ヘッダー{% endblock %}
+
+{% block title %}ログイン{% endblock %}
+
+{% block content %}
+  <div>
+    <div class="content">ここ、コンテンツ</div> 
+    {% include "parts1.html" %}
+    {% include "parts2.html" %}
+  </div>
+{% endblock %}
