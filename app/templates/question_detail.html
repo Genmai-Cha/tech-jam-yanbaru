@@ -1,34 +1,8 @@
 {% extends 'application.html' %}
-
-{% block script %}
-<script>
-$('#button').on('click', () => {
-	$.ajax({
-		type: 'PATCH',
-		url: '/questions/{{ question.id }}',
-		data: {
-			question_title: $('#question_title').val(),
-			question_content: $('#question_content').val(),
-		},
-		success: (question) => {
-			location.href = '/';
-		},
-	});
-});
-</script>
-{% endblock %}
-
 {% block content %}
-<form>
-	<div class="input-field">
-			<input id="question_title" name="question_title" id="question_title" type="text" value="{{ question.title }}" class="validate">
-			<label for="question_title">質問タイトル</label>
+	<div>
+		<div class="content">質問詳細ページ</div>
 	</div>
-	<div class="input-field">
-			<textarea id="question_content" name="question_content" type="text" class="materialize-textarea">{{ question.content }}</textarea>
-			<label for="question_content">質問本文</label>
-	</div>
-	<input id="button" class="waves-effect waves-light blue btn" type="button" value="更新する">
-	<a href="/" class="waves-effect waves-light green btn">一覧へ戻る</a>
-</form>
+	質問タイトル：{{question.title}}
+	質問本文：{{question.content}}
 {% endblock %}

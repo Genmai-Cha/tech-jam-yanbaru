@@ -15,7 +15,6 @@ def top():
 @app.route('/questions/<int:question_id>')
 def question_detail(question_id):
 	question = Questions.query.filter_by(id=question_id).first()
-
 	return render_template('question_detail.html', question=question)
 
 @app.route('/questions/<int:question_id>', methods=['patch'])
