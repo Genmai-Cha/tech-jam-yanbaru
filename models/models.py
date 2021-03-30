@@ -20,8 +20,8 @@ class questions(Base):
     def __repr__(self):
         return '<Title %r>' % (self.title)
 
-class coments(Base):
-    __tablename__ = 'coments'
+class comments(Base):
+    __tablename__ = 'comments'
     id = Column(Integer, primary_key=True,autoincrement = True)
     question_id = Column( 'question_id',Integer,ForeignKey('questions.id', onupdate='CASCADE', ondelete='CASCADE'))
     content = Column(Text)
