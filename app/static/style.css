@@ -1,0 +1,15 @@
+.question_box{
+    border: 1px solid red;
+    width: 80%;
+    margin: auto;
+}
+.icon_erea{
+display: flex;
+}
+
+.name_date_box{
+    border: 1px solid black;
+}
+.question_contents h2{
+    font-size: 2em;
+}

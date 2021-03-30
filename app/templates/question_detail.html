@@ -6,9 +6,14 @@
 	<div class="question_box">
 		<div class="icon_erea">
 			<img src="/static/images/icon01.png" alt="仮アイコン">
-			<p>名無しさん</p>
+			<div class="name_date_box">
+				<p>運営さん</p>
+			    <p>作成日時が入るよ</p>
+			</div>
 		</div>
-		<h1>{{question.title}}</h1>
+		<div class="question_contents">
+			<h2>{{question.title}}</h2>
 		<p>{{question.content}}</p> 
+		</div>
 	</div>
 {% endblock %}
