@@ -10,7 +10,6 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    {% block script %} {% endblock %}
   </head>
   <body>
     <header>
@@ -18,7 +17,6 @@
         <div class="nav-wrapper">
           <!-- <img src="static/images/icon.png" class="brand-logo right"> -->
           <a href="/" class="brand-logo"></i>QA ADVANCE</a>
-  
           <a href="/question/form" class="brand-logo right"></i>質問する</a>
         </div>
       </nav>
@@ -31,5 +29,6 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="static/js/common.js"></script>
+    {% block script %} {% endblock %}
   </body>
 </html>
