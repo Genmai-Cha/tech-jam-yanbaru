@@ -28,7 +28,7 @@ class coments(Base):
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime)
 
-def __init__(self, title=None, content=None, created_at=None,updated_at=None):
+ def __init__(self, title=None, content=None, created_at=None,updated_at=None):
         self.title = title
         self.content = content
         self.created_at = created_at
