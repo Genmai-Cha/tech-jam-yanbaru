@@ -11,7 +11,7 @@ class Questions(Base):
     content = Column(Text)
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime)
-    comments = relationship('Comment', backref='question', lazy=True)
+    comments = relationship('Comments', backref='question', lazy=True)
 
     def __init__(self, title=None, content=None, created_at=None,updated_at=None):
         self.title = title
