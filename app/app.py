@@ -1,5 +1,6 @@
-from flask import Flask,render_template,request
-# from models.models import OnegaiContent
+from flask import Flask,render_template,request,url_for,redirect
+from models.models import Questions
+from models.database import db_session
 
 #Flaskオブジェクトの生成
 app = Flask(__name__)
@@ -17,11 +18,21 @@ def question_detail():
 
 	return render_template('detail.html', name=name)
 
-@app.route('/questions/new')
-def question_post():
-	name = "fuga"
+@app.route('/question/add_form')
+def add_question_form():
+    return render_template('question_add.html')
 
-	return render_template('q_post.html', name=name)
+@app.route('/question/add',methods=['post'])
+def add_question():
+    question_title = request.form["question_title"]
+    question_content = request.form["question_content"]
+    question = Questions()
+    question.title = question_title
+    question.content = question_content
+    db_session.add(question)
+    db_session.commit()
+	
+    return redirect(url_for('top'))
 
 @app.route('/questions/<int:question_id>/edit')
 def question_edit():
