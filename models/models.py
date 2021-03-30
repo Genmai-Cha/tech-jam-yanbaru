@@ -23,10 +23,10 @@ class questions(Base):
 class coments(Base):
     __tablename__ = 'coments'
     id = Column(Integer, primary_key=True,autoincrement = True)
-    question_id = Column(Integer,ForeignKey("users.id"))
+    question_id = Column( 'question_id',Integer,ForeignKey('questions.id', onupdate='CASCADE', ondelete='CASCADE'))
     content = Column(Text)
-    created_at = Column(DateTime, default=datetime.now())
-    updated_at = Column(DateTime)
+    created_at = Column(DateTime, default=datetime.now(), nullable=False)
+    updated_at = Column(DateTime,default=datetime.now(), nullable=False)
 
     def __init__(self, title=None, content=None, created_at=None,updated_at=None):
         self.title = title
