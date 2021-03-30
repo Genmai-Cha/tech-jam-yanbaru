@@ -58,8 +58,20 @@ def post_comments():
 
     return redirect(url_for('question_detail', question_id=comment.question_id))
 
-@app.route('/answers/<int:question_id>')
-def answer_edit():
-	name = "hogehoge"
+@app.route('/comments/<int:comment_id>')
+def get_comments_edit(comment_id):
+    comment = db_session.query(Comments).filter(Comments.id==comment_id).one()
+    return render_template('comment_edit.html', comment=comment)
 
-	return render_template('a_editing.html', name=name)
+@app.route('/comments/<int:comment_id>', methods=['patch'])
+def patch_comments_edit(comment_id):
+    comment = db_session.query(Comments).filter(Comments.id==comment_id).one()
+    comment.content = request.form['content']
+    db_session.add(comment)
+    db_session.commit()
+
+    return jsonify({
+        'id': comment.id,
+        'question_id': comment.question_id,
+        'content': comment.content,
+    })
