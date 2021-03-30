@@ -60,12 +60,12 @@ def post_comments():
 
 @app.route('/comments/<int:comment_id>')
 def get_comments_edit(comment_id):
-    comment = db_session.query(Comments).filter(Comments.id==comment_id).one()
+    comment = db_session.query(Comments).filter(Comments.id==comment_id).first()
     return render_template('comment_edit.html', comment=comment)
 
 @app.route('/comments/<int:comment_id>', methods=['patch'])
 def patch_comments_edit(comment_id):
-    comment = db_session.query(Comments).filter(Comments.id==comment_id).one()
+    comment = db_session.query(Comments).filter(Comments.id==comment_id).first()
     comment.content = request.form['content']
     db_session.add(comment)
     db_session.commit()
