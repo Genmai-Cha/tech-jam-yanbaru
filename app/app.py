@@ -15,6 +15,10 @@ def top():
 @app.route('/questions/<int:question_id>')
 def question_detail(question_id):
 	question = Questions.query.filter_by(id=question_id).first()
+    # comment = Comments.query.filter_by(id=question_id).first()
+    # comment = Comments.query.filter_by(id=question_id).first() 
+    # comment = db_session.query(Comments).filter(Comments.id==comment_id).one()
+    # ,comment_body=comment
 	return render_template('question_detail.html', question=question,question_id=question_id)
 
 @app.route('/questions/<int:question_id>/edit')
