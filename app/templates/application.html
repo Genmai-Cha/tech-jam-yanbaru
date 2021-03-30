@@ -13,7 +13,16 @@
     {% block script %} {% endblock %}
   </head>
   <body>
-    <header>{% block header %}{% endblock %}</header>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <!-- <img src="static/images/icon.png" class="brand-logo right"> -->
+          <a href="/" class="brand-logo"></i>QA ADVANCE</a>
+  
+          <a href="/questions/new" class="brand-logo right"></i>質問する</a>
+        </div>
+      </nav>
+    </header>
     <div class="title">{% block title %}{% endblock %}</div>
     {% block content %}{% endblock %} Hello {{ name }}
     <footer>共通フッタ--</footer>
