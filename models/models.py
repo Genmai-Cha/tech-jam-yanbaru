@@ -33,7 +33,5 @@ class Comments(Base):
         self.content = content
         self.created_at = created_at
         self.updated_at = updated_at
-    def __repr__(self):
-        return '<Title %r>' % (self.title)
 
 
