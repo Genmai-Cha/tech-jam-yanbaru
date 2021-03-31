@@ -20,6 +20,7 @@
 	</div>
 	<a class="waves-effect waves-light btn-large" href="/questions/{{question_id}}/comments/new">回答する</a>
 	<h2>回答</h2>
+	{% for comment in comments %}
 	<div class="comment_box">
 		<div class="icon_erea">
 			<img src="/static/images/icon01.png" alt="仮アイコン" class="user_icon">
@@ -29,7 +30,8 @@
 			</div>
 		</div>
 		<div class="question_contents">
-		<p>{{comment_body}}ここにコメントが入るよ</p> 
+		<p>{{comment.content}}</p> 
+	{% endfor %}
 		</div>
 	</div>
 {% endblock %}
