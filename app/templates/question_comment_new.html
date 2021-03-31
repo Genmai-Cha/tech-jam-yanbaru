@@ -1,13 +1,30 @@
 {% extends 'application.html' %}
 
 {% block content %}
+<!-- ここからquestion_detailから引用 -->
+	<div class="question_box">
+		<div class="icon_erea">
+			<img src="/static/images/icon01.png" alt="仮アイコン" class="user_icon">
+			<div class="name_date_box">
+				<p>運営さん</p>
+			    <p>2021/03/31</p>
+			</div>
+		</div>
+		<div class="question_contents">
+			<h2>{{question.title}}</h2>
+		<p>{{question.content}}</p> 
+		</div>
+	</div>
+<!-- ここまで -->
+
+
 <form action="/comments" method="POST">
-    <input name="question_id" id="question_id" type="hidden" value="{{ question_id }}" class="validate">
+    <input name="question_id" id="question_id" type="hidden" value="{{question.id}}" class="validate">
     <div class="input-field">
         <input name="content" id="content" type="text" class="validate">
         <label for="content">コメント</label>
     </div>
     <input class="waves-effect waves-light blue btn" type="submit" value="コメントする">
-    <a href="/questions/{{ question_id }}" class="waves-effect waves-light green btn">質問へ戻る</a>
+    <a href="/questions/{{question.id}}" class="waves-effect waves-light green btn">質問へ戻る</a>
 </form>
 {% endblock %}
