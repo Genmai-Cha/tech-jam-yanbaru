@@ -1,8 +1,5 @@
 {% extends 'application.html' %}
 {% block content %}
-	<div>
-		<div class="content">質問詳細ページ</div>
-	</div>
 	<div class="question_box">
 		<div class="icon_erea">
 			<img src="/static/images/icon03.png" alt="仮アイコン" class="user_icon">
@@ -15,7 +12,7 @@
 		</div>
 		<div class="question_contents">
 			<h3>{{question.title}}</h3>
-		<p>{{question.content}}</p> 
+		<p>{{question.content}}</p>
 		</div>
 	</div>
 	<a class="waves-effect waves-light btn-large" href="/questions/{{question.id}}/comments/new">回答する</a>
@@ -32,7 +29,7 @@
 			<a class="waves-effect waves-light btn-large" href="/comments/{{comment.id}}">編集する</a>
 		</div>
 		<div class="question_contents">
-		<p>{{comment.content}}</p> 
+		<p>{{comment.content}}</p>
 	{% endfor %}
 		</div>
 	</div>
