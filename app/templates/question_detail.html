@@ -5,15 +5,35 @@
 	</div>
 	<div class="question_box">
 		<div class="icon_erea">
-			<img src="/static/images/icon01.png" alt="仮アイコン" class="user_icon">
+			<img src="/static/images/icon03.png" alt="仮アイコン" class="user_icon">
 			<div class="name_date_box">
-				<p>運営さん</p>
-			    <p>2021/03/31</p>
+				<p>質問者さん</p>
+			    <p>投稿日時：{{question.created_at}}</p>
+				<!-- <p>更新日時：{{question.updated_at}}</p> -->
 			</div>
+			<a class="waves-effect waves-light btn-large" href="/questions/{{question.id}}/edit">編集する</a>
 		</div>
 		<div class="question_contents">
-			<h2>{{question.title}}</h2>
+			<h3>{{question.title}}</h3>
 		<p>{{question.content}}</p> 
+		</div>
+	</div>
+	<a class="waves-effect waves-light btn-large" href="/questions/{{question.id}}/comments/new">回答する</a>
+	<h2>回答</h2>
+
+	{% for comment in comments %}
+	<div class="comment_box">
+		<div class="icon_erea">
+			<img src="/static/images/icon02.png" alt="仮アイコン" class="user_icon">
+			<div class="name_date_box">
+				<p>回答者さん</p>
+			    <p>投稿日時：</p>
+			</div>
+			<a class="waves-effect waves-light btn-large" href="/comments/{{comment.id}}">編集する</a>
+		</div>
+		<div class="question_contents">
+		<p>{{comment.content}}</p> 
+	{% endfor %}
 		</div>
 	</div>
 {% endblock %}
