@@ -55,7 +55,8 @@ def question_new():
 
 @app.route('/questions/<int:question_id>/comments/new')
 def get_questions_comments_new(question_id):
-    return render_template('question_comment_new.html', question_id=question_id)
+    question = Questions.query.filter_by(id=question_id).first()
+    return render_template('question_comment_new.html', question=question)
 
 @app.route('/comments', methods=['post'])
 def post_comments():
