@@ -11,15 +11,16 @@
 			    <p>投稿日時：{{question.created_at}}</p>
 				<!-- <p>更新日時：{{question.updated_at}}</p> -->
 			</div>
-			<a class="waves-effect waves-light btn-large" href="/questions/{{question_id}}/edit">編集する</a>
+			<a class="waves-effect waves-light btn-large" href="/questions/{{question.id}}/edit">編集する</a>
 		</div>
 		<div class="question_contents">
 			<h3>{{question.title}}</h3>
 		<p>{{question.content}}</p> 
 		</div>
 	</div>
-	<a class="waves-effect waves-light btn-large" href="/questions/{{question_id}}/comments/new">回答する</a>
+	<a class="waves-effect waves-light btn-large" href="/questions/{{question.id}}/comments/new">回答する</a>
 	<h2>回答</h2>
+
 	{% for comment in comments %}
 	<div class="comment_box">
 		<div class="icon_erea">
@@ -28,6 +29,7 @@
 				<p>回答者さん</p>
 			    <p>投稿日時：</p>
 			</div>
+			<a class="waves-effect waves-light btn-large" href="/comments/{{comment_id}}">編集する</a>
 		</div>
 		<div class="question_contents">
 		<p>{{comment.content}}</p> 
