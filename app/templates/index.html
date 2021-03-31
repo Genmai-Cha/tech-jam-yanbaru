@@ -13,7 +13,9 @@ title %}テスト{% endblock %} {% block content %}
       <tbody>
         {% for question in questions %}
         <tr>
-          <td>{{question.title}}</td>
+          <td>
+            <a href="/questions/{{question.id}}" class="collection-item">{{question.title}}</a>
+          </td>
           <td>{{question.content}}</td>
           <td>{{question.created_at }}</td>
         </tr>
@@ -21,6 +23,6 @@ title %}テスト{% endblock %} {% block content %}
       </tbody>
     </table>
   </div>
-  {% include "parts1.html" %} {% include "parts2.html" %}
+ <!-- {% include "parts1.html" %} {% include "parts2.html" %} -->
 </div>
 {% endblock %}
