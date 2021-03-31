@@ -19,7 +19,7 @@
 
 
 <form action="/comments" method="POST">
-    <input name="question_id" id="question_id" type="hidden" value="{{ question_id }}" class="validate">
+    <input name="question_id" id="question_id" type="hidden" value="{{question.id}}" class="validate">
     <div class="input-field">
         <input name="content" id="content" type="text" class="validate">
         <label for="content">コメント</label>
