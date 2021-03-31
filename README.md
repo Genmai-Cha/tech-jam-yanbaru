@@ -10,4 +10,4 @@
 
 ### sqlite起動
 1. ターミナルでdbファイルがあるディレクトリ(models)まで移動。
-1. ` sqlite3 onegai.db `とうつ
+1. ` sqlite3 qa_advance.db `とうつ

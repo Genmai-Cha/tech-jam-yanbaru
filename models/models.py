@@ -2,7 +2,7 @@
 from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, event, engine
 from models.database import Base
 from datetime import datetime
-
+from sqlalchemy.orm import relationship
 
 class Questions(Base):
     __tablename__ = 'questions'
@@ -11,6 +11,7 @@ class Questions(Base):
     content = Column(Text)
     created_at = Column(DateTime, default=datetime.now())
     updated_at = Column(DateTime)
+    comments = relationship('Comments', backref='question', lazy=True)
 
     def __init__(self, title=None, content=None, created_at=None,updated_at=None):
         self.title = title
