@@ -9,6 +9,7 @@
 			<div class="name_date_box">
 				<p>質問者さん</p>
 			    <p>投稿日時：{{question.created_at}}</p>
+				<!-- <p>更新日時：{{question.updated_at}}</p> -->
 			</div>
 			<a class="waves-effect waves-light btn-large" href="/questions/{{question_id}}/edit">編集する</a>
 		</div>
@@ -28,8 +29,7 @@
 			</div>
 		</div>
 		<div class="question_contents">
-			<h3>uuuu</h3>
-		<p>{{comment_body}}</p> 
+		<p>{{comment_body}}ここにコメントが入るよ</p> 
 		</div>
 	</div>
 {% endblock %}
