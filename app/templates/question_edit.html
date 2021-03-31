@@ -11,7 +11,7 @@ $('#button').on('click', () => {
 			question_content: $('#question_content').val(),
 		},
 		success: (question) => {
-			location.href = '/';
+			location.href = '/questions/{{ question.id }}';
 		},
 	});
 });
