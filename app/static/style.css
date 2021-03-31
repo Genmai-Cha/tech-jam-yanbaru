@@ -1,24 +1,19 @@
-.question_box {
-  border: 1px solid red;
-  width: 80%;
-  margin: auto;
+.question_box{
+    border: 1px solid red;
+    width: 80%;
+    margin: auto;
 }
-.icon_erea {
-  display: flex;
+.icon_erea{
+display: flex;
 }
-.icon_erea.user_icon img {
-  width: 70px;
+.icon_erea.user_icon img{
+    width: 70px;
 }
-.name_date_box {
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
+.name_date_box{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
 }
-.question_contents h2 {
-  font-size: 2em;
-}
-
-img {
-  height: 5rem;
-  width: auto;
+.question_contents h2{
+    font-size: 2em;
 }
